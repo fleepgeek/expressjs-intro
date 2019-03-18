@@ -2,12 +2,15 @@ const express = require("express");
 // const http = require("http");
 // body-parser parses incoming request before the request handlers
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const app = express();
 const adminRoutes = require("./routes/admin");
 const blogRoutes = require("./routes/blog");
 
 app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(express.static(path.join(__dirname, "public")))
 
 app.use("/admin", adminRoutes);
 app.use(blogRoutes);
