@@ -1,0 +1,11 @@
+extends layouts/main_layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/home.css")
+
+block content
+    h1 Hello World
+    p Cool stuffs
+    ul
+        each post in allPosts
+            li #{post.title}

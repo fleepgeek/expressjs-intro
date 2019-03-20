@@ -4,15 +4,20 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 
-const app = express();
-const adminRoutes = require("./routes/admin");
+const adminData = require("./routes/admin");
 const blogRoutes = require("./routes/blog");
+const app = express();
+
+app.set("view engine", "pug");
+// no need for this since the default folder
+// express looks for its views is called "views"
+// app.set("views", "views"); 
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(express.static(path.join(__dirname, "public")))
 
-app.use("/admin", adminRoutes);
+app.use("/admin", adminData.router);
 app.use(blogRoutes);
 
 app.use((req, res, next) => {
