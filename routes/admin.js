@@ -6,8 +6,7 @@ const router = express.Router();
 const posts = [];
 
 router.get("/add-post", (req, res, next) => {
-    // res.sendFile(path.join(__dirname, "../", "views", "add_post.html"));
-    res.render("add_post", { pageTitle: "Add Post" });
+    res.render("add_post", { pageTitle: "Add Post", path: "/admin" + req.path });
 });
 
 router.post("/add-post", (req, res, next) => {

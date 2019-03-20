@@ -8,6 +8,9 @@ html(lang="en")
         link(rel="stylesheet", href="/css/main.css")
         block styles
     body
+        nav.navbar
+            a(href="/" class= (path === "/" ? "active" : "")) Home
+            a(href="/admin/add-post" class= (path === "/admin/add-post" ? "active" : "")) Add Post
         block content
 
         footer Copyright 2019

@@ -5,7 +5,11 @@ const { posts } = require("./admin");
 const router = express.Router();
 
 router.get("/", (req, res, next) => {
-    res.render("home", { pageTitle: "Home Page", allPosts: posts });
+    res.render("home", { 
+        pageTitle: "Home Page", 
+        allPosts: posts,
+        path: req.path 
+    });
 });
 
 module.exports = router;

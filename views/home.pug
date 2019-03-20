@@ -4,8 +4,9 @@ block styles
     link(rel="stylesheet", href="/css/home.css")
 
 block content
-    h1 Hello World
-    p Cool stuffs
-    ul
-        each post in allPosts
-            li #{post.title}
+    if allPosts.length > 0
+        ul
+            each post in allPosts
+                li #{post.title}
+    else
+        h2 No Posts
