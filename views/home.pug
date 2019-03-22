@@ -7,6 +7,7 @@ block content
     if allPosts.length > 0
         ul
             each post in allPosts
-                li #{post.title}
+                li 
+                    a(href="/posts/" + post.id) #{post.title}
     else
         h2 No Posts

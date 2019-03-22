@@ -6,6 +6,10 @@ block styles
 block content
     h1 Add Post
     form.postForm(action="/admin/add-post", method="post")
-        label(for="title") Title:
-        input#title(type="text", name="title")
+        div
+            label(for="title") Title:
+            input#title(type="text", name="title")
+        div
+            label(for="content") Content:
+            textarea#content(name="content", cols="30", rows="10")
         input(type="submit", value="Send")

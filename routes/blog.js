@@ -1,15 +1,11 @@
 const express = require("express");
-const path = require("path");
+const postController = require("../controllers/posts")
+const generalController = require("../controllers/general");
 
-const { posts } = require("./admin");
 const router = express.Router();
 
-router.get("/", (req, res, next) => {
-    res.render("home", { 
-        pageTitle: "Home Page", 
-        allPosts: posts,
-        path: req.path 
-    });
-});
+router.get("/", postController.getPosts);
+router.get("/posts/:id", postController.getPostById);
+router.get("/about", generalController.getAboutUs);
 
 module.exports = router;

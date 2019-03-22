@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 // const http = require("http");
 // body-parser parses incoming request before the request handlers
